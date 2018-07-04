@@ -1,0 +1,38 @@
+{
+  "name": "marie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MEAN application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Tomás Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "dbf-parser": "0.0.1",
+    "dbfstream": "^1.0.20",
+    "express": "^4.16.3",
+    "express-basic-auth": "^1.1.5",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
+    "fs": "0.0.1-security",
+    "helmet": "^3.12.1",
+    "kerberos": "0.0.24",
+    "localtunnel": "^1.9.0",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.6",
+    "node-dbf": "^0.4.0",
+    "nodemon": "^1.17.5",
+    "npm": "^6.1.0",
+    "oledb": "^1.5.2",
+    "read-dbf": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "serve-favicon": "^2.5.0"
+  }
+}
