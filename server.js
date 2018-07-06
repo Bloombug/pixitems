@@ -18,8 +18,6 @@ var formidable = require('formidable');
 //Referencing credentials
 var credentials = require('./credentials.js');
 
-//Express basic authentication module
-var basicAuth = require('express-basic-auth');
 
 //using mongoose for simplicity
 var mongoose = require('mongoose');
