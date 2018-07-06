@@ -1,5 +1,6 @@
 var express = require('express');
-var assert = require('assert')
+var assert = require('assert');
+
 
 //To read the dbf file
 const dbfstream = require('dbfstream');
@@ -134,6 +135,7 @@ app.get('/about', function (req, res) {
 	res.render('about');
 });
 
+
 //Form routes
 app.get('/contact', function (req, res) {
 	res.render('contact', { csrf: 'CSRF token here' });
@@ -166,19 +168,14 @@ app.get('/products', function (req, res) {
 });
 
 
+
+
 app.get('/thankyou', function (req, res) {
 	res.render('thankyou');;
 });
 
 
-//Use this to clear the database
-app.get('/clearme', function (req, res) {
 
-	db.produtos.remove([]);
-
-	console.log("\n### Database cleared... ###");
-	res.redirect(303, '/');
-});
 
 //Dealing with the info given to us on the contact page, using its form
 app.post('/process', function (req, res) {
@@ -190,6 +187,16 @@ app.post('/process', function (req, res) {
 	console.log('Email do cliente: ' + req.body.email);
 
 	console.log('Questão: ' + req.body.ques);
+
+	var nodemailer = require('nodemailer').mail;
+
+	nodemailer({
+		from: req.body.email,
+		to: "programpix@gmail.com",
+		subject: "ProgramPix - Resolução de Problemas",
+		text: "Teste",
+	});
+
 
 	res.redirect(303, '/thankyou');
 });
