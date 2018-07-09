@@ -16,6 +16,12 @@ var favicon = require('serve-favicon');
 var formidable = require('formidable');
 
 
+//using mongoose for simplicity
+var mongoose = require('mongoose');
+
+// var db = mongoose.connection;
+// mongoose.connect('mongodb://localhost:27017/produtos');
+
 //To read and import the .dbf file
 
 //Upload path
@@ -58,7 +64,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 
 
-//Database code! THIS DOES NOT WORK YET
+//Database code!
 //#####################################################
 
 
@@ -140,6 +146,8 @@ app.get('/products', function (req, res) {
 
 	//Never forget the .close()!
 	db.close();
+	fs.writeFileSync("./upload/produtos.json", JSON.stringify(content, null, 4), 'utf8');
+	console.log("\n### Product.json was saved... ###");
 });
 
 
