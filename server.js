@@ -3,9 +3,9 @@ var assert = require('assert');
 
 
 //To read the dbf file
-const dbfstream = require('dbfstream');
+var dbfstream = require('dbfstream');
 
-var dbf = dbfstream('produtos.dbf', 'utf-8');
+var dbf = dbfstream('produtos.DBF', 'utf-8');
 var content = [];
 
 var favicon = require('serve-favicon');
