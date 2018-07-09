@@ -19,7 +19,7 @@ var formidable = require('formidable');
 //using mongoose for simplicity
 var mongoose = require('mongoose');
 
-// var db = mongoose.connection;
+var db = mongoose.connection;
 // mongoose.connect('mongodb://localhost:27017/produtos');
 
 //To read and import the .dbf file
