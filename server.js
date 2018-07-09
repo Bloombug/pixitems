@@ -9,14 +9,13 @@ var dbf = dbfstream('./upload/produtos.dbf', 'utf-8');
 var content = [];
 
 var favicon = require('serve-favicon');
-var helmet = require('helmet');
+
 
 
 //Formidable: to upload files and mess with them!
 var formidable = require('formidable');
 
-//Referencing credentials
-var credentials = require('./credentials.js');
+
 
 
 //using mongoose for simplicity
@@ -69,9 +68,6 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static('./views/images'));
 
 
-//Using Helmet to handle web vulnerabilities, by setting HTTP headers
-app.use(helmet());
-
 //Using basicAuth to add default username and password
 
 
@@ -110,8 +106,6 @@ app.use(require('body-parser').urlencoded({
 }));
 
 
-//Cookie-parser: to manage cookies and sessions	
-app.use(require('cookie-parser')(credentials.cookieSecret));
 
 //Setting up the port
 app.set('port', process.env.PORT || 3000);
