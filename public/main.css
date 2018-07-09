@@ -1,0 +1,38 @@
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #000;
+        background-image: none;
+        color: white;
+        background-image: url('https://i.redd.it/wn0069qc9s811.jpg'); 
+        background-repeat: no-repeat;
+    	background-size: auto; 
+    	background-attachment: fixed;
+    }
+
+    div {
+    	color: black;
+    	border-radius: 5px;
+    }
+
+    .page-header{
+    	color: white;
+
+    }
+}
+
+@media only screen and (min-width: 768px){
+
+body { 
+	
+	background-image: url('https://i.redd.it/t20ux9q7mq811.jpg');
+	background-repeat: no-repeat;
+    background-size: 100%; background-attachment: fixed;
+    font-family: Roboto Condensed;
+
+}
+}
+
+
+/*"https://i.redd.it/wn0069qc9s811.jpg" */

@@ -3,9 +3,9 @@ var assert = require('assert');
 
 
 //To read the dbf file
-var dbfstream = require('dbfstream');
+const dbfstream = require('dbfstream');
 
-var dbf = dbfstream('produtos.DBF', 'utf-8');
+var dbf = dbfstream('produtos.dbf', 'utf-8');
 var content = [];
 
 var favicon = require('serve-favicon');
@@ -63,13 +63,6 @@ var app = express();
 
 //Favicon path
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-//Background images path
-app.use(express.static('./views/images'));
-
-
-//Using basicAuth to add default username and password
-
 
 
 
