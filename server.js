@@ -5,7 +5,7 @@ var assert = require('assert');
 //To read the dbf file
 const dbfstream = require('dbfstream');
 
-var dbf = dbfstream('produtos.DBF', 'utf-8');
+var dbf = dbfstream('./upload/produtos.DBF', 'utf-8');
 var content = [];
 
 var favicon = require('serve-favicon');
@@ -15,14 +15,6 @@ var favicon = require('serve-favicon');
 //Formidable: to upload files and mess with them!
 var formidable = require('formidable');
 
-
-
-
-//using mongoose for simplicity
-var mongoose = require('mongoose');
-
-var db = mongoose.connection;
-mongoose.connect('mongodb://localhost:27017/produtos');
 
 //To read and import the .dbf file
 
@@ -66,7 +58,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 
 
-//Database code!
+//Database code! THIS DOES NOT WORK YET
 //#####################################################
 
 
@@ -131,7 +123,7 @@ app.get('/contact', function (req, res) {
 app.get('/products', function (req, res) {
 
 
-	var produtos_1 = JSON.parse(fs.readFileSync("./upload/produtos.json", 'utf8'));
+	var produtos_1 = fs.readFileSync("./upload/produtos.json", 'utf8');
 
 	produto.collection.insertMany(produtos_1, function(err,r) {
 		assert.equal(null, err);
@@ -148,8 +140,6 @@ app.get('/products', function (req, res) {
 
 	//Never forget the .close()!
 	db.close();
-	fs.writeFileSync("./upload/produtos.json", JSON.stringify(content, null, 4), 'utf8');
-	console.log("\n### Product.json was saved... ###");
 });
 
 
