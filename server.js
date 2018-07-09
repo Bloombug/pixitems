@@ -68,14 +68,14 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //#####################################################
 
 
-db.on('error', console.error.bind(console, 'connection error:'));
+/*db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
 
 	console.log("\n### Database up and running at mongodb://localhost/produtos... ###");
 	module.exports = produto;
 	console.log("\n### Model created and exported with success... ###");
 
-});
+});*/
 
 
 //###################################################
